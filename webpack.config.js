@@ -4,22 +4,24 @@ var webpack = require('webpack');
  * Default webpack configuration for development
  */
 var config = {
-  devtool: 'eval-source-map',
   entry:  __dirname + "/app/App.js",
   output: {
     path: __dirname + "/public",
     filename: "bundle.js"
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+  
   module: {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['es2015','react',"stage-1"],
+        presets: ['es2015','react'],
+        "env": {
+          "development": {
+            "presets": ["react-hmre"]
+          }
+        },
         "plugins": [
           "transform-decorators-legacy",
           "transform-class-properties"
