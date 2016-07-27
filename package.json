@@ -2,7 +2,7 @@
   "name": "react-app-boilerplate",
   "version": "0.1.4",
   "description": "React application boilerplate",
-  "author": "Cássio Zen",
+  "author": "Tapos Ghosh",
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",
